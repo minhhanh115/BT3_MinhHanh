@@ -1,8 +1,9 @@
 # THIẾT KẾ VÀ CÀI ĐẶT CSDL QUẢN LÝ CẦM ĐỒ
 
-Họ và tên: Từ Văn Hải
+Họ và tên: Nguyễn Minh Hạnh
 
 Lớp: K59KMT
+
 Giảng viên: Đỗ Duy Cốp
 
 ## 1. Mô tả bài toán
