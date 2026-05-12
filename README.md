@@ -316,9 +316,9 @@ GO                                                                            --
 <p align="center">Bảng NhatKyHeThong</p>
 
 
-### PHẦN 1 - EVENT 1: ĐĂNG KÝ HỢP ĐỒNG MỚI
+# PHẦN 1 - EVENT 1: ĐĂNG KÝ HỢP ĐỒNG MỚI
 
-1.1. Phân tích logic
+### 1.1. Phân tích logic
 
 - Yêu cầu: Viết Store Procedure tiếp nhận hợp đồng mới với các bước:
 
@@ -344,7 +344,7 @@ Procedure nhận tham số READONLY kiểu này
 
 Dùng vòng lặp hoặc INSERT...SELECT để xử lý
 
-1.2. Tạo Table Type để truyền danh sách tài sản
+### 1.2. Tạo Table Type để truyền danh sách tài sản
 
 ```sql
 CREATE TYPE DanhSachTaiSanType AS TABLE                                       -- Tạo kiểu bảng để truyền danh sách tài sản
@@ -368,7 +368,8 @@ GO                                                                            --
 <img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/cec90ac5-a144-4527-b8ba-876c13bfd3c5" />
 
 <p align="center">Tạo Table Type</p>
-1.3. Viết Store Procedure sp_DangKyHopDongMoi
+
+### 1.3. Viết Store Procedure sp_DangKyHopDongMoi
 
 ```sql
 CREATE OR ALTER PROCEDURE sp_DangKyHopDongMoi                                -- Tạo hoặc cập nhật procedure đăng ký hợp đồng
@@ -500,7 +501,8 @@ GO                                                                            --
 ```
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/43c03644-797a-4035-abea-720f13b737d5" />
 
-Lệnh chạy thử
+<p align="center">Lệnh chạy thử</p>
+
 ```sql
 DECLARE @DanhSachTaiSan DanhSachTaiSanType;                                 -- Khai báo biến kiểu table
 
@@ -528,7 +530,7 @@ Kết quả
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/83fcd788-0acf-4c5a-92db-fca6ec7d801a" />
 
- Đăng ký hợp đồng thành công
+ <p align="center">Đăng ký hợp đồng thành công</p>
  
 Kiểm tra dữ liệu đã thêm
 
@@ -542,27 +544,19 @@ Kết quả kiểm tra
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/06f57f90-0d9d-4031-9c6b-10cdba4ffe91" />
 
- Kiểm tra KhachHang, HopDongCamDo, TaiSan, ChiTietTaiSan
+ <p align="center">Kiểm tra KhachHang, HopDongCamDo, TaiSan, ChiTietTaiSan</p>
  
-PHẦN 2 - EVENT 2: TÍNH TOÁN CÔNG NỢ THỜI GIAN THỰC
+# PHẦN 2 - EVENT 2: TÍNH TOÁN CÔNG NỢ THỜI GIAN THỰC
 
-2.1. Phân tích logic
+### 2.1. Phân tích logic
 
-Yêu cầu:
+- Yêu cầu:
 
 fn_CalcMoneyTransaction(TransactionID, TargetDate) - tính nợ theo giao dịch
 
 `fn_CalcMoneyContract(Contract
 
-Tiếp tục viết phần Event 2 từ đầu:
-
-2.1. Phân tích logic
-Yêu cầu:
-
-fn_CalcMoneyTransaction(TransactionID, TargetDate) - tính nợ theo giao dịch
-
-fn_CalcMoneyContract(ContractID, TargetDate) - tính tổng nợ hợp đồng đến ngày TargetDate
-Quy tắc tính lãi:
+- Tiếp tục viết phần Event 2 từ đầu:
 
 Trước Deadline1: lãi đơn = gốc × 0.005 × số ngày
 
@@ -570,7 +564,7 @@ Sau Deadline1: lãi kép = (gốc + lãi đơn) × (1.005)^(số ngày sau Deadl
 
 Cần tính cả số tiền đã trả để được gốc còn lại.
 
-2.2. Function tính nợ theo hợp đồng
+### 2.2. Function tính nợ theo hợp đồng
 
 ```sql
 CREATE OR ALTER FUNCTION fn_CalcMoneyContract                                 -- Tạo function tính tổng nợ theo hợp đồng
@@ -656,7 +650,7 @@ GO                                                                         -- K�
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/ec5d2bae-a7ad-48b4-91f7-6a4fe9b1f9d9" />
 
-Lệnh chạy thử
+<p align="center"><p align="center">Lệnh chạy thử</p></p>
 ```sql
 -- Tạo giao dịch mẫu để test
 INSERT INTO GiaoDichTraNo
@@ -674,11 +668,13 @@ SELECT dbo.fn_CalcMoneyContract(1, '2026-05-08') AS TongNoTruocDeadline1;
 SELECT dbo.fn_CalcMoneyContract(1, '2026-05-15') AS TongNoSauDeadline1;
 GO                                                                         -- Kết thúc batch
 ```
+
 Kết quả mong đợi
+
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/098b3f0f-4525-4689-824b-b482f263b754" />
 Tính nợ hợp đồng
 
-2.3. Function tính nợ theo giao dịch
+2.3.Function tính nợ theo giao dịch.
 
 ```sql
 CREATE OR ALTER FUNCTION fn_CalcMoneyTransaction                             -- Tạo function tính nợ theo giao dịch
@@ -722,7 +718,7 @@ Kết quả mong đợi
 
 Tính nợ giao dịch
 
-PHẦN 3 - EVENT 3: XỬ LÝ TRẢ NỢ VÀ HOÀN TRẢ TÀI SẢN
+# PHẦN 3 - EVENT 3: XỬ LÝ TRẢ NỢ VÀ HOÀN TRẢ TÀI SẢN
 3.1. Phân tích logic
 
 Yêu cầu: Procedure xử lý khi khách đến trả tiền:
@@ -969,11 +965,11 @@ Kết quả kiểm tra
 
  Kiểm tra giao dịch, Kiểm tra hợp đồng
  
-PHẦN 4 - EVENT 4: TRUY VẤN DANH SÁCH NỢ XẤU
+# PHẦN 4 - EVENT 4: TRUY VẤN DANH SÁCH NỢ XẤU
 
 4.1. Phân tích logic
 
-Yêu cầu: Liệt kê khách hàng nợ xấu với các điều kiện:
+- Yêu cầu: Liệt kê khách hàng nợ xấu với các điều kiện:
 
 Đã quá Deadline1
 
@@ -1018,7 +1014,7 @@ Kết quả mong đợi
 
 anh sách nợ xấu
 
-PHẦN 5 - EVENT 5: TRIGGER QUẢN LÝ THANH LÝ TÀI SẢN
+# PHẦN 5 - EVENT 5: TRIGGER QUẢN LÝ THANH LÝ TÀI SẢN
 
 5.1. Phân tích logic
 
@@ -1168,7 +1164,7 @@ Kết quả mong đợi
 
 Tài sản đã bán thanh lý
 
-PHẦN BỔ SUNG 1 - GIA HẠN HỢP ĐỒNG
+# PHẦN BỔ SUNG 1 - GIA HẠN HỢP ĐỒNG
 
 6.1. Phân tích logic
 
@@ -1356,7 +1352,7 @@ Kiểm tra lịch sử gia hạn
 Kiểm tra hợp đồng sau gia hạn
 
 
-PHẦN BỔ SUNG 2 - AUDIT LOG LỊCH SỬ TRẢ NỢ
+# PHẦN BỔ SUNG 2 - AUDIT LOG LỊCH SỬ TRẢ NỢ
 
 7.1. Phân tích logic
 
