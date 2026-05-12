@@ -4,6 +4,8 @@ Họ và tên: Nguyễn Minh Hạnh
 
 Lớp: K59KMT
 
+MSSV: K235480106023
+
 Giảng viên: Đỗ Duy Cốp
 
 ## 1. Mô tả bài toán
@@ -62,7 +64,7 @@ Thiết kế đảm bảo chuẩn hóa 3NF.
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/b989e4e6-a167-4fee-be3a-65422c6f407c" />
 
-Sơ đồ ERD
+<p align="center">Sơ đồ ERD</p>
 
 
 ---
@@ -88,11 +90,11 @@ SELECT DB_NAME() AS TenCoSoDuLieuHienTai;                                     --
 GO
 ```
                                                                          -- Kết thúc batch
-Kết quả 
+- Kết quả 
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/69fea4d1-6e53-4165-8c90-20fe9fac6f37" />
 
-Tạo database thành công
+<p align="center">Tạo database thành công</p>
 
 0.3. Tạo bảng KhachHang
 
@@ -111,17 +113,17 @@ CREATE TABLE KhachHang                                                        --
 -- Kết thúc batch
 GO
 ```                                                                          
-Lệnh chạy thử
+- Lệnh chạy thử
 ```sql
 SELECT * FROM KhachHang;                                                      -- Xem tất cả dữ liệu trong bảng KhachHang
 GO
                                                                            -- Kết thúc batch
 ```
-Kết quả 
+- Kết quả 
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/34feb31f-5da7-4d47-b1f9-0ab6932fabde" />
 
-Bảng KhachHang
+<p align="center">Bảng KhachHang</p>
 
 0.4. Tạo bảng HopDongCamDo
 ```sql
@@ -148,17 +150,16 @@ CREATE TABLE HopDongCamDo                                                     --
 );                                                                            -- Kết thúc bảng
 GO                                                                            -- Kết thúc batch
 ```
-Lệnh chạy thử
+- Lệnh chạy thử
 ```sql
 SELECT * FROM HopDongCamDo;                                                  -- Kiểm tra bảng HopDongCamDo
 GO                                                                            -- Kết thúc batch
 ```
 
-Kết quả mong đợi
+- Kết quả mong đợi
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/46ecdd40-f850-4d7b-82df-9646ce6957a3" />
 
-Bảng HopDongCamDo
-
+<p align="center">Bảng HopDongCamDo</p>
 0.5. Tạo bảng TaiSanTheChap
 
 ```sql
@@ -175,17 +176,18 @@ CREATE TABLE TaiSanTheChap                                                    --
 );                                                                            -- Kết thúc bảng
 GO                                                                            -- Kết thúc batch
 ```
-Lệnh chạy thử
+- Lệnh chạy thử
 
 SELECT * FROM TaiSanTheChap;                                                 -- Xem bảng TaiSanTheChap
 GO                                                                            -- Kết thúc batch
 
-Kết quả 
+- Kết quả 
 
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/536f3805-6164-44eb-b057-b496b5046e8b" />
 
-Bảng TaiSanTheChap
+<p align="center">Bảng TaiSanTheChap</p>
+
 0.6. Tạo bảng ChiTietTaiSanCamCo
 
 ```sql
@@ -212,16 +214,16 @@ CREATE TABLE ChiTietTaiSanCamCo                                               --
 GO                                                                            -- Kết thúc batch
 ```
 
-Lệnh chạy thử
+- Lệnh chạy thử
 
 SELECT * FROM ChiTietTaiSanCamCo;                                            -- Xem bảng chi tiết tài sản cầm cố
 GO                                                                            -- Kết thúc batch
 
-Kết quả 
+- Kết quả 
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/2b6860a9-b282-4927-b78f-c60e58e28eac" />
 
-Bảng ChiTietTaiSanCamCo
+<p align="center">Bảng ChiTietTaiSanCamCo</p>
 
 0.7. Tạo bảng GiaoDichTraNo
 
@@ -250,15 +252,16 @@ CREATE TABLE GiaoDichTraNo                                                   -- 
 GO                                                                            -- Kết thúc batch
 ```
 
-Lệnh chạy thử
+- Lệnh chạy thử
 
 SELECT * FROM GiaoDichTraNo;                                                 -- Kiểm tra bảng GiaoDichTraNo
 GO                                                                            -- Kết thúc batch
-Kết quả mong đợi
+- Kết quả mong đợi
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/17470089-b7dc-4096-a386-a32da28fd8aa" />
 
-Bảng GiaoDichTraNo
+<p align="center">Bảng GiaoDichTraNo</p>
+
 0.8. Tạo bảng LichSuGiaHan
 
 ```sql
@@ -281,14 +284,14 @@ CREATE TABLE LichSuGiaHan                                                   -- B
 GO                                                                            -- Kết thúc batch
 ```
 
-Lệnh chạy thử
+- Lệnh chạy thử
 
 SELECT * FROM LichSuGiaHan;                                                  -- Kiểm tra bảng LichSuGiaHan
 GO                                                                            -- Kết thúc batch
-Kết quả mong đợi
+- Kết quả mong đợi
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/4b1001dd-58ff-4499-8e92-4db669b9d50a" />
 
-Bảng LichSuGiaHan
+<p align="center">Bảng LichSuGiaHan</p>
 
 0.9. Tạo bảng NhatKyHeThong (Audit Log)
 ```sql
@@ -306,17 +309,18 @@ GO                                                                            --
 SELECT * FROM NhatKyHeThong;                                                 -- Kiểm tra bảng NhatKyHeThong
 GO                                                                            -- Kết thúc batch
 ```
-Kết quả mong đợi
+- Kết quả mong đợi
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/073a1d99-e1d6-4a48-ad8a-be3377e85985" />
 
-Bảng NhatKyHeThong
+<p align="center">Bảng NhatKyHeThong</p>
 
-PHẦN 1 - EVENT 1: ĐĂNG KÝ HỢP ĐỒNG MỚI
+
+### PHẦN 1 - EVENT 1: ĐĂNG KÝ HỢP ĐỒNG MỚI
 
 1.1. Phân tích logic
 
-Yêu cầu: Viết Store Procedure tiếp nhận hợp đồng mới với các bước:
+- Yêu cầu: Viết Store Procedure tiếp nhận hợp đồng mới với các bước:
 
 Lưu thông tin khách hàng vào bảng KhachHang
 
@@ -330,9 +334,9 @@ Tạo liên kết trong ChiTietTaiSanCamCo
 
 Ghi log vào NhatKyHeThong
 
-Khó khăn: SQL Server Procedure không nhận mảng trực tiếp → cần dùng Table Type.
+- Khó khăn: SQL Server Procedure không nhận mảng trực tiếp → cần dùng Table Type.
 
-Giải pháp:
+- Giải pháp:
 
 Tạo kiểu bảng DanhSachTaiSanType
 
@@ -358,12 +362,12 @@ GO                                                                            --
 SELECT * FROM sys.types WHERE name = 'DanhSachTaiSanType';                  -- Kiểm tra kiểu đã được tạo
 GO                                                                            -- Kết thúc batch
 ```
-Kết quả 
+- Kết quả 
 
 
 <img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/cec90ac5-a144-4527-b8ba-876c13bfd3c5" />
 
-Tạo Table Type
+<p align="center">Tạo Table Type</p>
 1.3. Viết Store Procedure sp_DangKyHopDongMoi
 
 ```sql
